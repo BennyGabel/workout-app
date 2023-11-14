@@ -1,0 +1,67 @@
+Up-to  54:37
+
+
+https://github.com/NorbertBM/react-crash-course-2022-with-workout-app-project
+
+uses library
+ES7+React/Redux/React-Native snippets
+
+
+In App.js. Should ONLY be ONE FRAGMENT    <div className="App">...</div>
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Title</h1>
+    </div>
+  );
+}
+
+Since it wwill ONLY be one fragment, can also be replaced by 
+
+function App() {
+  return (
+    <>
+      <h1>Title</h1>
+    </>
+  );
+}
+
+or 
+
+import { Fragment } from 'react';
+function App() {
+  return (
+    <Fragment>
+      <h1>Title</h1>
+    </Fragment>
+  );
+}
+
+<> .. </> is the same as <Fragment> .. </Fragment>
+The only difference is in order to use <Fragment> .. </Fragment>, you require to      import { Fragment } from 'react'
+
+
+In React, we have to use "className"; if we use "class", we will get an error
+
+inLine style (inside the fragment, requires {{ }})   i.e.  style={{ color: "purple", background: "#333"}}
+If we do it via variable:
+1) the variable HAS to be declared beore return ( )
+2) we just use single {}                             i.e.  style={h1Style}
+
+
+Original App.js.... moved to Home.jsx and then remmed out+removed
+
+<h1 className="text-purple">Title</h1>              Assigns class "text-purple"
+<h1 className="display-1 bg-danger" >Title</h1>     Assigns class/calls class from bootstrap
+  
+  
+<Title text={"Home" } color="purple"/>              Calls component Title; passes <Text> "Home" and <color> "Purple"
+  
+  
+<Title />                                           Calls component Title; will use default text
+<Title text="My Title"/>                            Calls component Title; passes <text> (string)
+<Title text={100+20}/>                              Calls component Title; passes <text> (function)
+<Title />
+
+In order to use Icons, go to react-icons
